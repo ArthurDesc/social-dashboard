@@ -30,11 +30,29 @@ nav ul {
 
 nav ul li {
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    opacity: 0.9;
+}
+
+nav h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+nav h1 a:hover {
+    opacity: 0.9;
 }
 
 main {
