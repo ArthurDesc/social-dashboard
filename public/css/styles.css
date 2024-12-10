@@ -1,10 +1,15 @@
 :root {
   --primary-color: #4a90e2;
   --secondary-color: #2ecc71;
-  --dark-color: #2c3e50;
-  --light-color: #ecf0f1;
+  --dark-color: #e4e6eb;
+  --light-color: #18191a;
   --danger-color: #e74c3c;
   --success-color: #27ae60;
+  --bg-primary: #18191a;
+  --bg-secondary: #242526;
+  --text-primary: #e4e6eb;
+  --text-secondary: #b0b3b8;
+  --border-color: #3e4042;
 }
 
 /* Styles pour gérer le chargement initial */
@@ -35,8 +40,8 @@ body {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  background-color: #f8f9fa;
-  color: var(--dark-color);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .container {
@@ -47,8 +52,8 @@ body {
 
 /* Navigation */
 .navbar {
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   padding: 1rem 0;
 }
 
@@ -71,7 +76,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--dark-color);
+  color: var(--text-primary);
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -89,10 +94,10 @@ body {
 }
 
 .stats-card {
-  background: white;
+  background: var(--bg-secondary);
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
@@ -120,7 +125,7 @@ body {
 .stats-number {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--dark-color);
+  color: var(--text-primary);
   margin: 0.5rem 0;
 }
 
@@ -144,15 +149,15 @@ body {
   max-width: 400px;
   margin: 4rem auto;
   padding: 2rem;
-  background: white;
+  background: var(--bg-secondary);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .login-title {
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--dark-color);
+  color: var(--text-primary);
 }
 
 .form-group {
@@ -168,9 +173,11 @@ body {
 .form-input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   font-size: 1rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 .form-input:focus {
