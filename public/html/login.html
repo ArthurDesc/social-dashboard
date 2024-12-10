@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Social Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/login.css">
+    <style>
+        .js-loading * {
+            visibility: hidden;
+        }
+        .js-loading:before {
+            content: '';
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #202124;
+            z-index: 999;
+        }
+    </style>
+    <script>
+        document.documentElement.classList.add('js-loading');
+        window.addEventListener('load', () => {
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -13,19 +33,34 @@
 
     <main>
         <div class="login-container">
-            <h2>Connexion</h2>
-            <p class="login-text">Connectez-vous avec :</p>
+            <h2 class="login-title">Bienvenue sur Social Dashboard</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                Gérez toutes vos statistiques sociales en un seul endroit
+            </p>
             
-            <div class="oauth-buttons">
-                <!-- Bouton Google -->
-                <a href="/auth/google" class="oauth-btn google">
+            <div class="oauth-buttons" style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="/auth/google" class="btn btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background-color: #DB4437;">
                     <i class="fab fa-google"></i>
-                    Continuer avec Google
+                    Se connecter avec Google
                 </a>
+            </div>
 
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                <p style="color: #666; font-size: 0.9rem;">
+                    En vous connectant, vous acceptez nos
+                    <a href="#" style="color: var(--primary-color);">Conditions d'utilisation</a>
+                    et notre
+                    <a href="#" style="color: var(--primary-color);">Politique de confidentialité</a>
+                </p>
             </div>
         </div>
     </main>
+
+    <footer style="text-align: center; padding: 2rem 0; color: #666; font-size: 0.9rem;">
+        <div class="container">
+            <p>&copy; 2024 Social Dashboard. Tous droits réservés.</p>
+        </div>
+    </footer>
 
     <script src="/js/components/header.js"></script>
 </body>

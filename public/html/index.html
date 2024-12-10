@@ -3,15 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Dashboard</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Dashboard - Social Dashboard</title>
+    <style>
+        .js-loading * {
+            visibility: hidden;
+        }
+        .js-loading:before {
+            content: '';
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #202124;
+            z-index: 999;
+        }
+    </style>
+    <script>
+        document.documentElement.classList.add('js-loading');
+        window.addEventListener('load', () => {
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <app-header></app-header>
 
-    <main>
-        <h2>Bienvenue sur votre Dashboard</h2>
+    <main class="container" style="padding-top: 2rem;">
+        <div style="margin-bottom: 2rem;">
+            <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">Tableau de bord</h1>
+            <p style="color: #666;">Bienvenue ! Voici vos statistiques sociales en temps réel.</p>
+        </div>
+
+        <div class="stats-grid">
+            <!-- Twitter Stats -->
+            <div class="stats-card">
+                <div class="stats-header">
+                    <i class="fab fa-twitter stats-icon" style="color: #1DA1F2;"></i>
+                    <h3 class="stats-title">Twitter</h3>
+                </div>
+                <div class="stats-number">12,458</div>
+                <div class="stats-trend trend-up">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>+23% cette semaine</span>
+                </div>
+                <p style="color: #666; margin-top: 1rem;">Followers</p>
+            </div>
+
+            <!-- Instagram Stats -->
+            <div class="stats-card">
+                <div class="stats-header">
+                    <i class="fab fa-instagram stats-icon" style="color: #E1306C;"></i>
+                    <h3 class="stats-title">Instagram</h3>
+                </div>
+                <div class="stats-number">45,239</div>
+                <div class="stats-trend trend-up">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>+15% cette semaine</span>
+                </div>
+                <p style="color: #666; margin-top: 1rem;">Abonnés</p>
+            </div>
+
+            <!-- Facebook Stats -->
+            <div class="stats-card">
+                <div class="stats-header">
+                    <i class="fab fa-facebook stats-icon" style="color: #4267B2;"></i>
+                    <h3 class="stats-title">Facebook</h3>
+                </div>
+                <div class="stats-number">28,651</div>
+                <div class="stats-trend trend-down">
+                    <i class="fas fa-arrow-down"></i>
+                    <span>-2% cette semaine</span>
+                </div>
+                <p style="color: #666; margin-top: 1rem;">J'aime la page</p>
+            </div>
+        </div>
+
+        <!-- Engagement Section -->
+        <div style="margin-top: 3rem;">
+            <h2 style="margin-bottom: 1.5rem;">Taux d'engagement</h2>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <div class="stats-header">
+                        <i class="fas fa-heart stats-icon" style="color: #e74c3c;"></i>
+                        <h3 class="stats-title">Likes totaux</h3>
+                    </div>
+                    <div class="stats-number">89,742</div>
+                    <div class="stats-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+18% ce mois</span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-header">
+                        <i class="fas fa-comment stats-icon" style="color: #3498db;"></i>
+                        <h3 class="stats-title">Commentaires</h3>
+                    </div>
+                    <div class="stats-number">12,103</div>
+                    <div class="stats-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+7% ce mois</span>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <div class="stats-header">
+                        <i class="fas fa-share stats-icon" style="color: #2ecc71;"></i>
+                        <h3 class="stats-title">Partages</h3>
+                    </div>
+                    <div class="stats-number">4,251</div>
+                    <div class="stats-trend trend-up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>+25% ce mois</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <footer style="text-align: center; padding: 2rem 0; margin-top: 3rem; color: #666; font-size: 0.9rem; border-top: 1px solid #eee;">
+        <div class="container">
+            <p>&copy; 2024 Social Dashboard. Tous droits réservés.</p>
+        </div>
+    </footer>
 
     <script src="/js/components/header.js"></script>
 </body>
