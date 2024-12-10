@@ -15,8 +15,18 @@ router.post('/login', (req, res) => {
 
 // Route de déconnexion
 router.get('/logout', (req, res) => {
-    // Logique de déconnexion à implémenter
-    res.json({ message: 'Logout successful' });
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+});
+
+// Route de statut
+router.get('/status', (req, res) => {
+    res.json({
+        isAuthenticated: req.isAuthenticated(),
+        user: req.user
+    });
 });
 
 module.exports = router; 
