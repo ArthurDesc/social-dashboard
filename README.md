@@ -44,10 +44,11 @@ Le serveur démarrera sur `http://localhost:3000` par défaut.
 
 ```
 social-dashboard/
-├── config/         # Configuration de l'application
 ├── public/         # Fichiers statiques
+│   ├── html/      # Pages HTML
+│   ├── css/       # Styles
+│   └── js/        # Scripts client
 ├── routes/         # Routes de l'application
-├── views/          # Templates de vues
 ├── app.js         # Configuration Express
 ├── index.js       # Point d'entrée de l'application
 └── package.json   # Dépendances et scripts
